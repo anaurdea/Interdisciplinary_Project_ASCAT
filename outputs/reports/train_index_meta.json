@@ -1,0 +1,29 @@
+{
+  "dataset": "C:\\Users\\Ana\\OneDrive\\Desktop\\Documents\\Lectures\\Data Science Project\\Interdisciplinary_Project_ASCAT\\Dataset\\ASCAT_SSM_EASE2_25.nc",
+  "variable": "ssm",
+  "index_columns": [
+    "time",
+    "y",
+    "x"
+  ],
+  "sensor_dim": "channel",
+  "input_channels": [
+    0,
+    1
+  ],
+  "target_channel": 2,
+  "allow_partial_inputs": false,
+  "start_date": "2019-04-01",
+  "end_date": "2019-12-31",
+  "lat_min": 40.0,
+  "lat_max": 60.0,
+  "lon_min": -10.0,
+  "lon_max": 20.0,
+  "time_stride": 3,
+  "spatial_step": 2,
+  "time_batch_size": 48,
+  "time_candidates": 6502,
+  "y_candidates": 33,
+  "x_candidates": 58,
+  "num_samples": 190
+}

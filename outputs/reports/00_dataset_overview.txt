@@ -1,0 +1,12 @@
+ASCAT dataset overview
+
+Dataset: C:\Users\Ana\OneDrive\Desktop\Documents\Lectures\Data Science Project\Interdisciplinary_Project_ASCAT\Dataset\ASCAT_SSM_EASE2_25.nc
+Dimensions: channel=3, time=68577, y=584, x=1388
+Coordinates: ['spacecraft', 'timestamp', 'lat', 'lon']
+Data variables: ['ssm']
+Primary variable: ssm
+Primary variable dims: ('channel', 'time', 'y', 'x')
+Primary variable dtype: float32
+Time range: 2019-04-01T00:00:00.000000000 -> 2021-11-14T23:00:00.000000000
+Sensor labels: ['Metop-A', 'Metop-B', 'Metop-C']
+Missing fraction sample (first 365 steps or full if shorter): 0.9856

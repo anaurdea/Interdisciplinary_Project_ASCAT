@@ -1,0 +1,10 @@
+Missing data summary
+
+Variable: ssm
+Overall missing fraction: 0.995130
+Missing by sensor CSV: outputs\reports\01_missing_by_sensor.csv
+  - Metop-A: 0.995269
+  - Metop-B: 0.995060
+  - Metop-C: 0.995062
+Figure: outputs\figures\01_missing_by_time.png
+Figure: outputs\figures\01_missing_map_by_sensor.png

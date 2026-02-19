@@ -1,0 +1,48 @@
+{
+  "variable": "ssm",
+  "input_sensor_indices": [
+    0,
+    1
+  ],
+  "target_sensor_index": 2,
+  "input_label": "Metop-A+Metop-B",
+  "target_label": "Metop-C",
+  "timeseries_max_points": 300,
+  "map_step": 4,
+  "subset_bounds": {
+    "time": [
+      "2019-01-01",
+      "2019-12-31"
+    ],
+    "lat": [
+      40.0,
+      60.0
+    ],
+    "lon": [
+      -10.0,
+      20.0
+    ]
+  },
+  "input_volume_summary": {
+    "label": "input_volume",
+    "shape": {
+      "time": 19505,
+      "y": 66,
+      "x": 116
+    },
+    "mean": 44.91802215576172,
+    "std": 24.364177703857422,
+    "missing_fraction": 0.9763308352465421
+  },
+  "target_volume_summary": {
+    "label": "target_volume",
+    "shape": {
+      "time": 19505,
+      "y": 66,
+      "x": 116
+    },
+    "mean": 44.58701705932617,
+    "std": 24.470876693725586,
+    "missing_fraction": 0.9866449456868359
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "config": {
+    "dataset": "C:\\Users\\Ana\\OneDrive\\Desktop\\Documents\\Lectures\\Data Science Project\\Interdisciplinary_Project_ASCAT\\Dataset\\ASCAT_SSM_EASE2_25.nc",
+    "index": "C:\\Users\\Ana\\OneDrive\\Desktop\\Documents\\Lectures\\Data Science Project\\Interdisciplinary_Project_ASCAT\\outputs\\reports\\train_index.npy",
+    "seed": 42,
+    "split_mode": "time",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15000000000000005,
+    "feature_config": {
+      "input_channels": [
+        0,
+        1
+      ],
+      "include_input_std": true,
+      "include_input_range": true,
+      "include_channel_values": false,
+      "include_time_features": true
+    }
+  },
+  "split_sizes": {
+    "total": 190,
+    "train": 146,
+    "val": 18,
+    "test": 26
+  },
+  "heldout_test_metrics": {
+    "temporal_linear": {
+      "rmse": 40.723602294921875,
+      "mae": 38.667518615722656
+    },
+    "spatial_idw": {
+      "rmse": 46.01726150512695,
+      "mae": 44.53533172607422
+    },
+    "spatial_kriging": null,
+    "torch_mlp": {
+      "rmse": 27.82572364807129,
+      "mae": 26.94193458557129
+    }
+  },
+  "kriging_info": {
+    "status": "skipped"
+  },
+  "cross_validation": {
+    "n_folds": 3,
+    "temporal_linear": [
+      {
+        "rmse": 12.521944046020508,
+        "mae": 10.126923561096191
+      },
+      {
+        "rmse": 13.81701946258545,
+        "mae": 11.316062927246094
+      },
+      {
+        "rmse": 20.29636573791504,
+        "mae": 14.955058097839355
+      }
+    ],
+    "temporal_linear_summary": {
+      "rmse_mean": 15.545109748840332,
+      "rmse_std": 3.4009930107677295,
+      "mae_mean": 12.132681528727213,
+      "mae_std": 2.0539182443055464
+    },
+    "spatial_idw": [
+      {
+        "rmse": 11.80085277557373,
+        "mae": 9.454687118530273
+      },
+      {
+        "rmse": 13.759164810180664,
+        "mae": 11.279589653015137
+      },
+      {
+        "rmse": 20.917898178100586,
+        "mae": 15.161382675170898
+      }
+    ],
+    "spatial_idw_summary": {
+      "rmse_mean": 15.49263858795166,
+      "rmse_std": 3.918658590351104,
+      "mae_mean": 11.965219815572103,
+      "mae_std": 2.379658250519933
+    },
+    "torch_mlp": [
+      {
+        "rmse": 9.070734024047852,
+        "mae": 7.057394504547119
+      },
+      {
+        "rmse": 9.469621658325195,
+        "mae": 7.525598049163818
+      },
+      {
+        "rmse": 12.650520324707031,
+        "mae": 9.09759521484375
+      }
+    ],
+    "torch_mlp_summary": {
+      "rmse_mean": 10.396958669026693,
+      "rmse_std": 1.6018079240157304,
+      "mae_mean": 7.8935292561848955,
+      "mae_std": 0.8725956545077487
+    }
+  },
+  "torch_history": {
+    "train_loss": [
+      0.963239336013794,
+      0.8196929335594177,
+      0.7000118434429169,
+      0.5804393827915192,
+      0.4804943025112152,
+      0.3859273433685303,
+      0.3257623463869095,
+      0.32724582552909853,
+      0.33706693947315214,
+      0.28782441914081575,
+      0.2854469507932663,
+      0.3383530616760254,
+      0.3136692553758621,
+      0.3246171236038208,
+      0.2862285554409027,
+      0.29456073939800265
+    ],
+    "val_loss": [
+      0.4532119333744049,
+      0.3727174997329712,
+      0.3423727750778198,
+      0.44908300042152405,
+      0.35853105783462524,
+      0.2950398623943329,
+      0.3688415586948395,
+      0.42713749408721924,
+      0.5862290859222412,
+      0.4063180983066559,
+      0.37337526679039,
+      0.4491893947124481,
+      0.5631918907165527,
+      0.5928743481636047,
+      0.5495125651359558,
+      0.5477495193481445
+    ]
+  }
+}
