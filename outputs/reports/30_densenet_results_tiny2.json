@@ -1,0 +1,109 @@
+{
+  "config": {
+    "dataset": "Dataset/ASCAT_SSM_EASE2_25.nc",
+    "index": "outputs/reports/train_index.npy",
+    "baseline_json": "outputs/reports/20_baseline_results.json",
+    "output_json": "outputs/reports/30_densenet_results_tiny2.json",
+    "save_model": "outputs/models/30_densenet_model_tiny2.pt",
+    "fig_dir": "outputs/figures",
+    "variable": null,
+    "input_channels": [
+      0,
+      1
+    ],
+    "target_channel": 2,
+    "patch_size": 9,
+    "growth_rate": 16,
+    "block_layers": [
+      4,
+      4
+    ],
+    "init_features": 32,
+    "head_hidden": 64,
+    "dropout": 0.1,
+    "seed": 42,
+    "split_mode": "random",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "cv_folds": 2,
+    "epochs": 1,
+    "cv_epochs": 1,
+    "patience": 1,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "num_workers": 0,
+    "max_samples": 20,
+    "map_date": "2019-07-15",
+    "map_row_chunk": 16,
+    "map_batch_size": 1024,
+    "time_chunk": 256,
+    "lat_chunk": 200,
+    "lon_chunk": 200
+  },
+  "split_sizes": {
+    "total": 20,
+    "train": 14,
+    "val": 3,
+    "test": 3
+  },
+  "heldout_test_metrics": {
+    "densenet": {
+      "rmse": 62.3900032043457,
+      "mae": 59.41597366333008
+    }
+  },
+  "cross_validation": {
+    "n_folds": 2,
+    "fold_metrics": [
+      {
+        "rmse": 23.11530876159668,
+        "mae": 19.988529205322266
+      },
+      {
+        "rmse": 50.26824188232422,
+        "mae": 49.77921676635742
+      }
+    ],
+    "summary": {
+      "rmse_mean": 36.69177532196045,
+      "rmse_std": 13.57646656036377,
+      "mae_mean": 34.883872985839844,
+      "mae_std": 14.895343780517578
+    }
+  },
+  "target_normalization": {
+    "mean": 31.686283111572266,
+    "std": 17.023775100708008
+  },
+  "baseline_reference": {
+    "temporal_linear": {
+      "rmse": 40.723602294921875,
+      "mae": 38.667518615722656
+    },
+    "spatial_idw": {
+      "rmse": 46.01726150512695,
+      "mae": 44.53533172607422
+    },
+    "spatial_kriging": null,
+    "torch_mlp": {
+      "rmse": 27.82572364807129,
+      "mae": 26.94193458557129
+    }
+  },
+  "artifacts": {
+    "model_checkpoint": "outputs\\models\\30_densenet_model_tiny2.pt",
+    "metrics_plot": "outputs\\figures\\30_baseline_vs_densenet_metrics.png",
+    "gapfill_map_plot": "outputs\\figures\\30_densenet_gapfilled_map.png",
+    "map_timestamp": "2019-07-15T00:00:00"
+  },
+  "history": {
+    "train_loss": [
+      0.5595895051956177
+    ],
+    "val_loss": [
+      20.946802139282227
+    ]
+  }
+}

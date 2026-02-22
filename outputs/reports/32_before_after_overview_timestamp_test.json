@@ -1,0 +1,24 @@
+{
+  "dataset": "Dataset/ASCAT_SSM_EASE2_25.nc",
+  "checkpoint": "outputs/models/30_densenet_model_smoketest.pt",
+  "selection_mode": "timestamp",
+  "n_dates": 2,
+  "selected_dates_requested": [
+    "2019-04-01T01:00:00",
+    "2019-05-19T02:00:00"
+  ],
+  "selected_timestamps_actual": [
+    "2019-04-01T01:00:00",
+    "2019-05-19T02:00:00"
+  ],
+  "artifacts": {
+    "overview_figure": "outputs\\figures\\32_before_after_overview_timestamp_test.png",
+    "overview_arrays_npz": "outputs\\reports\\32_before_after_overview_timestamp_test.npz"
+  },
+  "stats": {
+    "observed_coverage_mean": 0.023432256653904915,
+    "gapfilled_coverage_mean": 0.05413574352860451,
+    "reconstructed_fraction_mean": 0.030703485012054443,
+    "mean_difference_global": 12.453980445861816
+  }
+}

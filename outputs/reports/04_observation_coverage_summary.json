@@ -1,0 +1,75 @@
+{
+  "dataset": "Dataset/ASCAT_SSM_EASE2_25.nc",
+  "variable": "ssm",
+  "target_channel": 2,
+  "n_selected_timestamps": 32,
+  "selected_start": "2019-04-01T00:00:00.000000000",
+  "selected_end": "2019-04-02T08:00:00.000000000",
+  "grid_shape": {
+    "y": 584,
+    "x": 1388
+  },
+  "target": {
+    "ever_observed_grid_fraction": 0.2325078397989273,
+    "observed_fraction_by_time_stats": {
+      "mean": 0.01364122610539198,
+      "p10": 0.0013787454226985574,
+      "p50": 0.015088355168700218,
+      "p90": 0.024472977966070175
+    }
+  },
+  "combined_sensors": {
+    "ever_observed_grid_fraction": 0.2595744729042053,
+    "observed_fraction_by_time_stats": {
+      "mean": 0.036337293684482574,
+      "p10": 0.020462945103645325,
+      "p50": 0.03710436075925827,
+      "p90": 0.05013434588909149
+    }
+  },
+  "figures": {
+    "target_by_time": "outputs\\figures\\04_observed_fraction_by_time_target.png",
+    "combined_by_time": "outputs\\figures\\04_observed_fraction_by_time_combined.png",
+    "target_frequency_map": "outputs\\figures\\04_observation_frequency_map_target.png",
+    "combined_frequency_map": "outputs\\figures\\04_observation_frequency_map_combined.png",
+    "combined_ever_map": "outputs\\figures\\04_observed_ever_map_combined.png",
+    "by_sensor_time": "outputs\\figures\\04_observed_fraction_by_time_by_sensor.png",
+    "by_sensor_frequency_map": "outputs\\figures\\04_observation_frequency_map_by_sensor.png",
+    "by_sensor_ever_map": "outputs\\figures\\04_observed_ever_map_by_sensor.png"
+  },
+  "per_sensor": [
+    {
+      "sensor_index": 0,
+      "sensor_label": "Metop-A",
+      "ever_observed_grid_fraction": 0.24755610525608063,
+      "observed_fraction_by_time_stats": {
+        "mean": 0.015640035271644592,
+        "p10": 0.006522146984934807,
+        "p50": 0.015969809144735336,
+        "p90": 0.02581668831408024
+      }
+    },
+    {
+      "sensor_index": 1,
+      "sensor_label": "Metop-B",
+      "ever_observed_grid_fraction": 0.23897843062877655,
+      "observed_fraction_by_time_stats": {
+        "mean": 0.013810006901621819,
+        "p10": 0.0024388348683714867,
+        "p50": 0.01285541895776987,
+        "p90": 0.027071448042988777
+      }
+    },
+    {
+      "sensor_index": 2,
+      "sensor_label": "Metop-C",
+      "ever_observed_grid_fraction": 0.2325078397989273,
+      "observed_fraction_by_time_stats": {
+        "mean": 0.01364122610539198,
+        "p10": 0.0013787454226985574,
+        "p50": 0.015088355168700218,
+        "p90": 0.024472977966070175
+      }
+    }
+  ]
+}

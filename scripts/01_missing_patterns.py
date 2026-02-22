@@ -102,21 +102,105 @@ def plot_missing_maps(missing_map, labels: list[str], out_path: Path) -> None:
         return
 
     sensor_count = missing_map.sizes[sensor_dim]
-    fig, axes = plt.subplots(1, sensor_count, figsize=(6 * sensor_count, 5), squeeze=False)
+    fig, axes = plt.subplots(
+        1,
+        sensor_count,
+        figsize=(6 * sensor_count, 5),
+        squeeze=False,
+        constrained_layout=True,
+    )
+    finite_vals = np.asarray(missing_map.values, dtype=np.float32)
+    finite_vals = finite_vals[np.isfinite(finite_vals)]
+    if finite_vals.size > 0:
+        vmin = float(np.quantile(finite_vals, 0.01))
+        vmax = float(np.quantile(finite_vals, 0.99))
+        if vmax <= vmin:
+            vmin = float(np.min(finite_vals))
+            vmax = float(np.max(finite_vals))
+    else:
+        vmin, vmax = 0.0, 1.0
+    mappable = None
 
     for idx in range(sensor_count):
         ax = axes[0, idx]
         panel = missing_map.isel({sensor_dim: idx})
-        panel.astype('float32').plot(
+        mappable = panel.astype('float32').plot(
             ax=ax,
-            add_colorbar=(idx == sensor_count - 1),
+            add_colorbar=False,
+            vmin=vmin,
+            vmax=vmax,
             **plot_kwargs,
         )
         title = labels[idx] if idx < len(labels) else f'sensor {idx}'
         ax.set_title(title)
 
+    if mappable is not None:
+        fig.colorbar(
+            mappable,
+            ax=axes.ravel().tolist(),
+            shrink=0.85,
+            pad=0.02,
+            label='Missing fraction',
+        )
     fig.suptitle('Missing fraction maps by sensor (mean over time)', fontsize=12)
-    fig.tight_layout()
+    fig.savefig(out_path, dpi=160)
+    plt.close(fig)
+
+
+def plot_missing_anomaly_maps(missing_map, labels: list[str], out_path: Path) -> None:
+    sensor_dim = detect_sensor_dim(missing_map)
+    if sensor_dim is None:
+        return
+
+    x_axis, y_axis = map_plot_axes(missing_map)
+    plot_kwargs = {'cmap': 'RdBu_r'}
+    if x_axis and y_axis:
+        plot_kwargs.update({'x': x_axis, 'y': y_axis})
+
+    anomaly = (missing_map - missing_map.mean(dim=sensor_dim)).astype('float32')
+    sensor_count = anomaly.sizes[sensor_dim]
+    fig, axes = plt.subplots(
+        1,
+        sensor_count,
+        figsize=(6 * sensor_count, 5),
+        squeeze=False,
+        constrained_layout=True,
+    )
+
+    finite_vals = np.asarray(anomaly.values, dtype=np.float32)
+    finite_vals = finite_vals[np.isfinite(finite_vals)]
+    if finite_vals.size > 0:
+        vmax = float(np.quantile(np.abs(finite_vals), 0.99))
+        if vmax <= 0:
+            vmax = float(np.max(np.abs(finite_vals)))
+    else:
+        vmax = 0.01
+    if vmax <= 0:
+        vmax = 0.01
+    mappable = None
+
+    for idx in range(sensor_count):
+        ax = axes[0, idx]
+        panel = anomaly.isel({sensor_dim: idx})
+        mappable = panel.plot(
+            ax=ax,
+            add_colorbar=False,
+            vmin=-vmax,
+            vmax=vmax,
+            **plot_kwargs,
+        )
+        title = labels[idx] if idx < len(labels) else f'sensor {idx}'
+        ax.set_title(f'{title} anomaly')
+
+    if mappable is not None:
+        fig.colorbar(
+            mappable,
+            ax=axes.ravel().tolist(),
+            shrink=0.85,
+            pad=0.02,
+            label='Delta missing fraction vs sensor mean',
+        )
+    fig.suptitle('Missing-fraction anomaly maps by sensor', fontsize=12)
     fig.savefig(out_path, dpi=160)
     plt.close(fig)
 
@@ -165,6 +249,11 @@ def main() -> None:
             missing_map = missing_map.mean(dim=dim)
     missing_map = missing_map.compute()
     plot_missing_maps(missing_map, labels, fig_dir / '01_missing_map_by_sensor.png')
+    plot_missing_anomaly_maps(
+        missing_map,
+        labels,
+        fig_dir / '01_missing_map_by_sensor_anomaly.png',
+    )
 
     report_lines = []
     report_lines.append('Missing data summary')
@@ -189,6 +278,7 @@ def main() -> None:
 
     report_lines.append(f'Figure: {fig_dir / "01_missing_by_time.png"}')
     report_lines.append(f'Figure: {fig_dir / "01_missing_map_by_sensor.png"}')
+    report_lines.append(f'Figure: {fig_dir / "01_missing_map_by_sensor_anomaly.png"}')
 
     report_path = report_dir / '01_missing_summary.txt'
     report_path.write_text('\n'.join(report_lines), encoding='utf-8')

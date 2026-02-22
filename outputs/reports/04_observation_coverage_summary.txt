@@ -1,0 +1,18 @@
+Observation coverage summary
+
+Dataset: Dataset/ASCAT_SSM_EASE2_25.nc
+Variable: ssm
+Selected timestamps: 32
+Time range: 2019-04-01T00:00:00.000000000 to 2019-04-02T08:00:00.000000000
+
+Target ever-observed grid fraction: 0.232508
+Combined-sensors ever-observed grid fraction: 0.259574
+
+Main figures:
+  - outputs\figures\04_observed_fraction_by_time_target.png
+  - outputs\figures\04_observed_fraction_by_time_combined.png
+  - outputs\figures\04_observation_frequency_map_target.png
+  - outputs\figures\04_observation_frequency_map_combined.png
+  - outputs\figures\04_observed_ever_map_combined.png
+
+JSON summary: outputs\reports\04_observation_coverage_summary.json

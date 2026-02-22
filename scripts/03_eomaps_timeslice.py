@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+import numpy as np
+
 from ascat_utils import (
     detect_sensor_dim,
     infer_primary_variable,
@@ -21,6 +23,23 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--time-chunk', type=int, default=256)
     parser.add_argument('--lat-chunk', type=int, default=200)
     parser.add_argument('--lon-chunk', type=int, default=200)
+    parser.add_argument(
+        '--no-shared-scale',
+        action='store_true',
+        help='Disable shared color scaling across all sensors for the selected timestamp.',
+    )
+    parser.add_argument(
+        '--low-quantile',
+        type=float,
+        default=0.02,
+        help='Lower quantile for robust shared color scaling (default: 0.02).',
+    )
+    parser.add_argument(
+        '--high-quantile',
+        type=float,
+        default=0.98,
+        help='Upper quantile for robust shared color scaling (default: 0.98).',
+    )
     parser.add_argument('--save-png', default='outputs/figures/03_eomaps_timeslice.png')
     parser.add_argument(
         '--no-show',
@@ -57,6 +76,59 @@ def set_map_title(map_obj, title: str) -> None:
             continue
 
 
+def robust_limits(
+    values: np.ndarray,
+    low_q: float,
+    high_q: float,
+) -> tuple[float | None, float | None]:
+    finite = values[np.isfinite(values)]
+    if finite.size == 0:
+        return None, None
+
+    low_q = min(max(low_q, 0.0), 1.0)
+    high_q = min(max(high_q, 0.0), 1.0)
+    if low_q >= high_q:
+        low_q, high_q = 0.0, 1.0
+
+    vmin = float(np.quantile(finite, low_q))
+    vmax = float(np.quantile(finite, high_q))
+    if not np.isfinite(vmin) or not np.isfinite(vmax) or vmin == vmax:
+        vmin = float(np.min(finite))
+        vmax = float(np.max(finite))
+    return vmin, vmax
+
+
+def print_sensor_stats(cube_at_time, sensor_dim: str, ds) -> None:
+    label_coord = ds.coords.get('spacecraft')
+    has_spacecraft = label_coord is not None and label_coord.dims == (sensor_dim,)
+
+    print('Per-sensor data summary at selected timestamp:')
+    for sensor_index in range(cube_at_time.sizes[sensor_dim]):
+        sensor_slice = cube_at_time.isel({sensor_dim: sensor_index}).values
+        finite = np.isfinite(sensor_slice)
+        finite_count = int(finite.sum())
+        total_count = int(sensor_slice.size)
+        frac = (finite_count / total_count) if total_count else 0.0
+        if finite_count > 0:
+            vals = sensor_slice[finite]
+            mean = float(vals.mean())
+            std = float(vals.std())
+        else:
+            mean = float('nan')
+            std = float('nan')
+        if has_spacecraft:
+            label = str(label_coord.values[sensor_index])
+            print(
+                f'  sensor={sensor_index} ({label}) | finite={frac:.4%} | '
+                f'mean={mean:.3f} | std={std:.3f}'
+            )
+        else:
+            print(
+                f'  sensor={sensor_index} | finite={frac:.4%} | '
+                f'mean={mean:.3f} | std={std:.3f}'
+            )
+
+
 def main() -> None:
     try:
         from eomaps import Maps
@@ -75,18 +147,27 @@ def main() -> None:
     da = ds[var_name]
 
     sensor_dim = detect_sensor_dim(da)
+    vmin, vmax = None, None
     if sensor_dim is not None:
         sensor_index = validate_sensor_indices(da, [args.sensor_index])[0]
-        selected, selected_time = select_nearest_time_slice(
-            da.isel({sensor_dim: sensor_index}),
-            ds,
-            args.date,
-        )
-        slice_da = selected
+        cube_at_time, selected_time = select_nearest_time_slice(da, ds, args.date)
+        if not args.no_shared_scale:
+            vmin, vmax = robust_limits(
+                cube_at_time.values,
+                low_q=args.low_quantile,
+                high_q=args.high_quantile,
+            )
+        print_sensor_stats(cube_at_time, sensor_dim, ds)
+        slice_da = cube_at_time.isel({sensor_dim: sensor_index})
         title = f'{var_name} | sensor={sensor_index} | time={selected_time}'
     else:
         slice_da, selected_time = select_nearest_time_slice(da, ds, args.date)
         title = f'{var_name} | time={selected_time}'
+        vmin, vmax = robust_limits(
+            slice_da.values,
+            low_q=args.low_quantile,
+            high_q=args.high_quantile,
+        )
 
     m = Maps(crs=4326)
     m.set_data(
@@ -95,7 +176,12 @@ def main() -> None:
         y=slice_da['lat'].values,
         crs=4326,
     )
-    m.plot_map(cmap='viridis')
+    plot_kwargs = {'cmap': 'viridis'}
+    if vmin is not None and vmax is not None:
+        plot_kwargs['vmin'] = vmin
+        plot_kwargs['vmax'] = vmax
+        print(f'Using color scale limits: vmin={vmin:.3f}, vmax={vmax:.3f}')
+    m.plot_map(**plot_kwargs)
     m.add_feature.preset.coastline()
     m.add_colorbar(label=var_name)
     set_map_title(m, title)

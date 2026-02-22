@@ -1,0 +1,112 @@
+{
+  "config": {
+    "dataset": "Dataset/ASCAT_SSM_EASE2_25.nc",
+    "index": "outputs/reports/train_index_smoke.npy",
+    "baseline_json": "outputs/reports/20_baseline_results_smoke.json",
+    "output_json": "outputs/reports/30_densenet_results_smoketest_eomaps.json",
+    "save_model": "outputs/models/30_densenet_model_smoketest_eomaps.pt",
+    "fig_dir": "outputs/figures",
+    "eomaps_png": "outputs/figures/30_densenet_gapfilled_eomaps_smoketest.png",
+    "no_eomaps": false,
+    "variable": null,
+    "input_channels": [
+      0,
+      1
+    ],
+    "target_channel": 2,
+    "patch_size": 9,
+    "growth_rate": 16,
+    "block_layers": [
+      4,
+      4
+    ],
+    "init_features": 32,
+    "head_hidden": 64,
+    "dropout": 0.1,
+    "seed": 42,
+    "split_mode": "time",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "cv_folds": 2,
+    "epochs": 1,
+    "cv_epochs": 1,
+    "patience": 1,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "num_workers": 0,
+    "max_samples": 60,
+    "map_date": "2019-07-15",
+    "map_row_chunk": 24,
+    "map_batch_size": 2048,
+    "time_chunk": 256,
+    "lat_chunk": 200,
+    "lon_chunk": 200
+  },
+  "split_sizes": {
+    "total": 60,
+    "train": 51,
+    "val": 4,
+    "test": 5
+  },
+  "heldout_test_metrics": {
+    "densenet": {
+      "rmse": 60.469791412353516,
+      "mae": 55.05836868286133
+    }
+  },
+  "cross_validation": {
+    "n_folds": 2,
+    "fold_metrics": [
+      {
+        "rmse": 39.957366943359375,
+        "mae": 37.180728912353516
+      },
+      {
+        "rmse": 86.00997161865234,
+        "mae": 71.15901947021484
+      }
+    ],
+    "summary": {
+      "rmse_mean": 62.98366928100586,
+      "rmse_std": 23.026302337646484,
+      "mae_mean": 54.16987419128418,
+      "mae_std": 16.989145278930664
+    }
+  },
+  "target_normalization": {
+    "mean": 39.757606506347656,
+    "std": 28.32758331298828
+  },
+  "baseline_reference": {
+    "temporal_linear": {
+      "rmse": 16.140880584716797,
+      "mae": 14.129680633544922
+    },
+    "spatial_idw": {
+      "rmse": 14.223103523254395,
+      "mae": 11.886273384094238
+    },
+    "spatial_kriging": null,
+    "torch_mlp": {
+      "rmse": 12.873772621154785,
+      "mae": 10.814535140991211
+    }
+  },
+  "artifacts": {
+    "model_checkpoint": "outputs\\models\\30_densenet_model_smoketest_eomaps.pt",
+    "metrics_plot": "outputs\\figures\\30_baseline_vs_densenet_metrics.png",
+    "gapfill_map_plot": "outputs\\figures\\30_densenet_gapfilled_map.png",
+    "gapfill_eomaps_plot": "outputs\\figures\\30_densenet_gapfilled_eomaps_smoketest.png",
+    "map_timestamp": "2019-07-15T00:00:00"
+  },
+  "history": {
+    "train_loss": [
+      0.7009217813611031
+    ],
+    "val_loss": [
+      2.194570779800415
+    ]
+  }
+}
