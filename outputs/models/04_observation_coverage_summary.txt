@@ -1,0 +1,18 @@
+Observation coverage summary
+
+Dataset: /home/jovyan/shared/datasets/geo/sync/datasets/scat_ard/ascat_ssm_ease25_datacube/ASCAT_SSM_EASE2_25.nc
+Variable: ssm
+Selected timestamps: 68577
+Time range: 2019-04-01T00:00:00.000000000 to 2021-11-14T23:00:00.000000000
+
+Target ever-observed grid fraction: 0.266902
+Combined-sensors ever-observed grid fraction: 0.266902
+
+Main figures:
+  - /home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_fraction_by_time_target.png
+  - /home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_fraction_by_time_combined.png
+  - /home/jovyan/12431004_data_science_project/code/outputs/figures/04_observation_frequency_map_target.png
+  - /home/jovyan/12431004_data_science_project/code/outputs/figures/04_observation_frequency_map_combined.png
+  - /home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_ever_map_combined.png
+
+JSON summary: /home/jovyan/12431004_data_science_project/code/outputs/reports/04_observation_coverage_summary.json

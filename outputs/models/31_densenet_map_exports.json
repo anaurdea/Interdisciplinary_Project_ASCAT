@@ -1,0 +1,92 @@
+{
+  "dataset": "/home/jovyan/shared/datasets/geo/sync/datasets/scat_ard/ascat_ssm_ease25_datacube/ASCAT_SSM_EASE2_25.nc",
+  "checkpoint": "/home/jovyan/12431004_data_science_project/code/outputs/models/30_densenet_model_gpu_smoke200.pt",
+  "selected_dates": [
+    "2019-04-25",
+    "2019-05-25",
+    "2019-06-24",
+    "2019-07-24",
+    "2019-08-23",
+    "2019-09-22",
+    "2019-10-22",
+    "2019-11-21",
+    "2020-01-02",
+    "2020-02-01",
+    "2020-03-02",
+    "2020-04-01"
+  ],
+  "exports": [
+    {
+      "requested_date": "2019-04-25",
+      "selected_timestamp": "2019-04-25T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-04-25.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-04-25.png"
+    },
+    {
+      "requested_date": "2019-05-25",
+      "selected_timestamp": "2019-05-25T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-05-25.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-05-25.png"
+    },
+    {
+      "requested_date": "2019-06-24",
+      "selected_timestamp": "2019-06-24T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-06-24.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-06-24.png"
+    },
+    {
+      "requested_date": "2019-07-24",
+      "selected_timestamp": "2019-07-24T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-07-24.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-07-24.png"
+    },
+    {
+      "requested_date": "2019-08-23",
+      "selected_timestamp": "2019-08-23T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-08-23.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-08-23.png"
+    },
+    {
+      "requested_date": "2019-09-22",
+      "selected_timestamp": "2019-09-22T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-09-22.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-09-22.png"
+    },
+    {
+      "requested_date": "2019-10-22",
+      "selected_timestamp": "2019-10-22T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-10-22.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-10-22.png"
+    },
+    {
+      "requested_date": "2019-11-21",
+      "selected_timestamp": "2019-11-21T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2019-11-21.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2019-11-21.png"
+    },
+    {
+      "requested_date": "2020-01-02",
+      "selected_timestamp": "2020-01-02T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2020-01-02.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2020-01-02.png"
+    },
+    {
+      "requested_date": "2020-02-01",
+      "selected_timestamp": "2020-02-01T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2020-02-01.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2020-02-01.png"
+    },
+    {
+      "requested_date": "2020-03-02",
+      "selected_timestamp": "2020-03-02T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2020-03-02.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2020-03-02.png"
+    },
+    {
+      "requested_date": "2020-04-01",
+      "selected_timestamp": "2020-04-01T00:00:00",
+      "map_png": "outputs/figures/maps/31_densenet_gapfill_2020-04-01.png",
+      "eomaps_png": "outputs/figures/maps/31_densenet_gapfill_eomaps_2020-04-01.png"
+    }
+  ]
+}

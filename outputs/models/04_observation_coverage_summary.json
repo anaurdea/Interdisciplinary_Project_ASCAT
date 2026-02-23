@@ -1,0 +1,75 @@
+{
+  "dataset": "/home/jovyan/shared/datasets/geo/sync/datasets/scat_ard/ascat_ssm_ease25_datacube/ASCAT_SSM_EASE2_25.nc",
+  "variable": "ssm",
+  "target_channel": 2,
+  "n_selected_timestamps": 68577,
+  "selected_start": "2019-04-01T00:00:00.000000000",
+  "selected_end": "2021-11-14T23:00:00.000000000",
+  "grid_shape": {
+    "y": 584,
+    "x": 1388
+  },
+  "target": {
+    "ever_observed_grid_fraction": 0.26690244674682617,
+    "observed_fraction_by_time_stats": {
+      "mean": 0.004938352387398481,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.01966685801744461
+    }
+  },
+  "combined_sensors": {
+    "ever_observed_grid_fraction": 0.26690244674682617,
+    "observed_fraction_by_time_stats": {
+      "mean": 0.012557782232761383,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.04416204243898392
+    }
+  },
+  "figures": {
+    "target_by_time": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_fraction_by_time_target.png",
+    "combined_by_time": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_fraction_by_time_combined.png",
+    "target_frequency_map": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observation_frequency_map_target.png",
+    "combined_frequency_map": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observation_frequency_map_combined.png",
+    "combined_ever_map": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_ever_map_combined.png",
+    "by_sensor_time": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_fraction_by_time_by_sensor.png",
+    "by_sensor_frequency_map": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observation_frequency_map_by_sensor.png",
+    "by_sensor_ever_map": "/home/jovyan/12431004_data_science_project/code/outputs/figures/04_observed_ever_map_by_sensor.png"
+  },
+  "per_sensor": [
+    {
+      "sensor_index": 0,
+      "sensor_label": "Metop-A",
+      "ever_observed_grid_fraction": 0.26690244674682617,
+      "observed_fraction_by_time_stats": {
+        "mean": 0.004731158260256052,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.018997957929968834
+      }
+    },
+    {
+      "sensor_index": 1,
+      "sensor_label": "Metop-B",
+      "ever_observed_grid_fraction": 0.26690244674682617,
+      "observed_fraction_by_time_stats": {
+        "mean": 0.004939607810229063,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.019655263051390648
+      }
+    },
+    {
+      "sensor_index": 2,
+      "sensor_label": "Metop-C",
+      "ever_observed_grid_fraction": 0.26690244674682617,
+      "observed_fraction_by_time_stats": {
+        "mean": 0.004938352387398481,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.01966685801744461
+      }
+    }
+  ]
+}

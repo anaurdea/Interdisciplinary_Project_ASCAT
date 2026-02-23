@@ -1,0 +1,109 @@
+{
+  "config": {
+    "dataset": "/home/jovyan/shared/datasets/geo/sync/datasets/scat_ard/ascat_ssm_ease25_datacube/ASCAT_SSM_EASE2_25.nc",
+    "index": "/home/jovyan/12431004_data_science_project/code/outputs/reports/train_index_full.npy",
+    "baseline_json": "/home/jovyan/12431004_data_science_project/code/outputs/reports/20_baseline_results_full_kriging.json",
+    "output_json": "/home/jovyan/12431004_data_science_project/code/outputs/reports/30_probe_50k.json",
+    "save_model": "/home/jovyan/12431004_data_science_project/code/outputs/models/30_probe_50k.pt",
+    "fig_dir": "outputs/figures",
+    "eomaps_png": "outputs/figures/30_densenet_gapfilled_eomaps.png",
+    "no_eomaps": true,
+    "variable": null,
+    "input_channels": [
+      0,
+      1
+    ],
+    "target_channel": 2,
+    "patch_size": 9,
+    "growth_rate": 16,
+    "block_layers": [
+      4,
+      4
+    ],
+    "init_features": 32,
+    "head_hidden": 64,
+    "dropout": 0.1,
+    "seed": 42,
+    "split_mode": "time",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "cv_folds": 0,
+    "epochs": 2,
+    "cv_epochs": 40,
+    "patience": 2,
+    "log_every": 1,
+    "batch_size": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "num_workers": 0,
+    "max_samples": 50000,
+    "map_date": "2019-07-15",
+    "map_row_chunk": 24,
+    "map_batch_size": 2048,
+    "time_chunk": 256,
+    "lat_chunk": 200,
+    "lon_chunk": 200
+  },
+  "split_sizes": {
+    "total": 50000,
+    "train": 33950,
+    "val": 10740,
+    "test": 5310
+  },
+  "heldout_test_metrics": {
+    "densenet": {
+      "rmse": 11.244864463806152,
+      "mae": 8.596705436706543
+    }
+  },
+  "cross_validation": {
+    "n_folds": 0,
+    "fold_metrics": [],
+    "summary": {
+      "rmse_mean": NaN,
+      "rmse_std": NaN,
+      "mae_mean": NaN,
+      "mae_std": NaN
+    }
+  },
+  "target_normalization": {
+    "mean": 42.53831481933594,
+    "std": 23.753496170043945
+  },
+  "baseline_reference": {
+    "temporal_linear": {
+      "rmse": 33.47217559814453,
+      "mae": 26.483055114746094
+    },
+    "spatial_idw": {
+      "rmse": 25.019746780395508,
+      "mae": 20.574209213256836
+    },
+    "spatial_kriging": {
+      "rmse": 25.019746780395508,
+      "mae": 20.574209213256836
+    },
+    "torch_mlp": {
+      "rmse": 10.792176246643066,
+      "mae": 7.502195358276367
+    }
+  },
+  "artifacts": {
+    "model_checkpoint": "/home/jovyan/12431004_data_science_project/code/outputs/models/30_probe_50k.pt",
+    "metrics_plot": "outputs/figures/30_baseline_vs_densenet_metrics.png",
+    "gapfill_map_plot": "outputs/figures/30_densenet_gapfilled_map.png",
+    "gapfill_eomaps_plot": null,
+    "map_timestamp": "2019-07-15T00:00:00"
+  },
+  "history": {
+    "train_loss": [
+      0.3018043016020517,
+      0.23125501626864411
+    ],
+    "val_loss": [
+      0.2514836157982548,
+      0.23074237749512708
+    ]
+  }
+}

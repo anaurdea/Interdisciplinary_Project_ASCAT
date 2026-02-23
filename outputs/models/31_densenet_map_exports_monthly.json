@@ -1,0 +1,225 @@
+{
+  "dataset": "/home/jovyan/shared/datasets/geo/sync/datasets/scat_ard/ascat_ssm_ease25_datacube/ASCAT_SSM_EASE2_25.nc",
+  "checkpoint": "/home/jovyan/12431004_data_science_project/code/outputs/models/30_full_1epoch.pt",
+  "selected_dates": [
+    "2019-04-25",
+    "2019-05-25",
+    "2019-06-24",
+    "2019-07-24",
+    "2019-08-23",
+    "2019-09-22",
+    "2019-10-22",
+    "2019-11-21",
+    "2020-01-02",
+    "2020-02-01",
+    "2020-03-02",
+    "2020-04-01",
+    "2020-05-01",
+    "2020-05-31",
+    "2020-06-30",
+    "2020-07-30",
+    "2020-08-29",
+    "2020-09-28",
+    "2020-10-28",
+    "2020-11-27",
+    "2020-12-27",
+    "2021-01-26",
+    "2021-02-25",
+    "2021-03-27",
+    "2021-04-26",
+    "2021-05-26",
+    "2021-06-25",
+    "2021-07-25",
+    "2021-08-24",
+    "2021-09-23",
+    "2021-10-23"
+  ],
+  "exports": [
+    {
+      "requested_date": "2019-04-25",
+      "selected_timestamp": "2019-04-25T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-04-25.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-04-25.png"
+    },
+    {
+      "requested_date": "2019-05-25",
+      "selected_timestamp": "2019-05-25T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-05-25.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-05-25.png"
+    },
+    {
+      "requested_date": "2019-06-24",
+      "selected_timestamp": "2019-06-24T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-06-24.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-06-24.png"
+    },
+    {
+      "requested_date": "2019-07-24",
+      "selected_timestamp": "2019-07-24T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-07-24.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-07-24.png"
+    },
+    {
+      "requested_date": "2019-08-23",
+      "selected_timestamp": "2019-08-23T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-08-23.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-08-23.png"
+    },
+    {
+      "requested_date": "2019-09-22",
+      "selected_timestamp": "2019-09-22T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-09-22.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-09-22.png"
+    },
+    {
+      "requested_date": "2019-10-22",
+      "selected_timestamp": "2019-10-22T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-10-22.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-10-22.png"
+    },
+    {
+      "requested_date": "2019-11-21",
+      "selected_timestamp": "2019-11-21T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2019-11-21.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2019-11-21.png"
+    },
+    {
+      "requested_date": "2020-01-02",
+      "selected_timestamp": "2020-01-02T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-01-02.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-01-02.png"
+    },
+    {
+      "requested_date": "2020-02-01",
+      "selected_timestamp": "2020-02-01T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-02-01.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-02-01.png"
+    },
+    {
+      "requested_date": "2020-03-02",
+      "selected_timestamp": "2020-03-02T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-03-02.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-03-02.png"
+    },
+    {
+      "requested_date": "2020-04-01",
+      "selected_timestamp": "2020-04-01T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-04-01.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-04-01.png"
+    },
+    {
+      "requested_date": "2020-05-01",
+      "selected_timestamp": "2020-05-01T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-05-01.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-05-01.png"
+    },
+    {
+      "requested_date": "2020-05-31",
+      "selected_timestamp": "2020-05-31T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-05-31.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-05-31.png"
+    },
+    {
+      "requested_date": "2020-06-30",
+      "selected_timestamp": "2020-06-30T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-06-30.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-06-30.png"
+    },
+    {
+      "requested_date": "2020-07-30",
+      "selected_timestamp": "2020-07-30T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-07-30.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-07-30.png"
+    },
+    {
+      "requested_date": "2020-08-29",
+      "selected_timestamp": "2020-08-29T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-08-29.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-08-29.png"
+    },
+    {
+      "requested_date": "2020-09-28",
+      "selected_timestamp": "2020-09-28T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-09-28.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-09-28.png"
+    },
+    {
+      "requested_date": "2020-10-28",
+      "selected_timestamp": "2020-10-28T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-10-28.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-10-28.png"
+    },
+    {
+      "requested_date": "2020-11-27",
+      "selected_timestamp": "2020-11-27T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-11-27.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-11-27.png"
+    },
+    {
+      "requested_date": "2020-12-27",
+      "selected_timestamp": "2020-12-27T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2020-12-27.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2020-12-27.png"
+    },
+    {
+      "requested_date": "2021-01-26",
+      "selected_timestamp": "2021-01-26T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-01-26.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-01-26.png"
+    },
+    {
+      "requested_date": "2021-02-25",
+      "selected_timestamp": "2021-02-25T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-02-25.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-02-25.png"
+    },
+    {
+      "requested_date": "2021-03-27",
+      "selected_timestamp": "2021-03-27T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-03-27.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-03-27.png"
+    },
+    {
+      "requested_date": "2021-04-26",
+      "selected_timestamp": "2021-04-26T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-04-26.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-04-26.png"
+    },
+    {
+      "requested_date": "2021-05-26",
+      "selected_timestamp": "2021-05-26T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-05-26.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-05-26.png"
+    },
+    {
+      "requested_date": "2021-06-25",
+      "selected_timestamp": "2021-06-25T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-06-25.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-06-25.png"
+    },
+    {
+      "requested_date": "2021-07-25",
+      "selected_timestamp": "2021-07-25T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-07-25.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-07-25.png"
+    },
+    {
+      "requested_date": "2021-08-24",
+      "selected_timestamp": "2021-08-24T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-08-24.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-08-24.png"
+    },
+    {
+      "requested_date": "2021-09-23",
+      "selected_timestamp": "2021-09-23T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-09-23.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-09-23.png"
+    },
+    {
+      "requested_date": "2021-10-23",
+      "selected_timestamp": "2021-10-23T00:00:00",
+      "map_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_monthly_2021-10-23.png",
+      "eomaps_png": "/home/jovyan/12431004_data_science_project/code/outputs/figures/maps_monthly/31_densenet_gapfill_eomaps_monthly_2021-10-23.png"
+    }
+  ]
+}
