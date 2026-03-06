@@ -1,4 +1,4 @@
-# ASCAT Soil Moisture Data Understanding
+# ASCAT Interpolation
 
 This repository contains an exploration for
 `ASCAT_SSM_EASE2_25.nc`.
